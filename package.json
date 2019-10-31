@@ -1,0 +1,29 @@
+{
+  "name": "alljsmin",
+  "version": "1.0.0",
+  "description": "Minify all js files and merge specified js files to all.js",
+  "bin": {
+    "alljsmin": "./bin/alljsmin"
+  },
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib"
+  },
+  "dependencies": {
+    "terser": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhsoft88/alljsmin.git"
+  },
+  "keywords": [
+    "minify",
+    "alljs"
+  ],
+  "author": "zhsoft88",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhsoft88/alljsmin/issues"
+  },
+  "homepage": "https://github.com/zhsoft88/alljsmin#readme"
+}
