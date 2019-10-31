@@ -51,10 +51,12 @@ Search @all.js tag, merge contained files to all.js.
 
 For example, in tag file main.html:
 
+```
 <!-- @all.js -->
 <script src="js/a.js"></script>
 <script src="js/b.js"></script>
 <!-- @all.js -->
+```
 
 These will merge js/a.js, js/b.js to js/all.js and minify it.
 
