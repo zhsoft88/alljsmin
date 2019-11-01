@@ -37,6 +37,10 @@ output_dir: optional, default: ${input_dir}.min
 
 ## Configuration: alljsmin.json
 
+File: ${input_dir}/alljsmin.json.
+
+Sample contents:
+
 ```
 {
   "tag_file": "js/background.js",
@@ -67,6 +71,29 @@ For example, in tag file main.html:
 ```
 
 These will merge “js/a.js”, “js/b.js” to “js/all.js” and minify it.
+
+Another example, in tag file background.js:
+
+```
+......
+  } else if (request.cmd === 'inject-detail') {
+    const all_js = [
+      /* @all.js */
+      'js/bytesrep.js',
+      'js/string_path.js',
+......
+      'js/content_script.js',
+      /* @all.js */
+    ]
+    for (const file of all_js) {
+      chrome.tabs.executeScript(sender.tab.id,
+          {allFrames: true, frameId: sender.frameId, file});
+......
+```
+
+These will merge “js/bytesrep.js”, “js/string_path.js”, ..., "js/content_script.js"
+to “js/all.js” and minify it.
+
 
 ### remove_files
 
