@@ -6,6 +6,14 @@ alljsmin does:
 2. Merge some js files to all.js (identified by @all.js in tag file)
 3. Tweak 'const is_debug = true' to 'const is_debug = false' for release
 
+alljsmin是一款小工具，方便release js相关的项目。
+
+1. 它会minify所有js文件，也可排除若干文件。
+2. 根据指定的标签文件(tag file),它会搜索@all.js，将前后@all.js行当中的部分做解析，将得到的
+所有文件合并为一个all.js并minify。
+3. 它也会将js中'const is_debug = true'替换为'const is_debug = false'。使用is_debug的
+好处是区分开发模式和release模式，release下某些功能可能要禁用了，如右键菜单等。
+
 ## Installation
 
 ```sh
@@ -58,15 +66,19 @@ For example, in tag file main.html:
 <!-- @all.js -->
 ```
 
-These will merge js/a.js, js/b.js to js/all.js and minify it.
+These will merge “js/a.js”, “js/b.js” to “js/all.js” and minify it.
 
 ### remove_files
 
 Remove these file in output dir.
 
+删除release模式下不需要的文件。
+
 ### excludes
 
-Patterns for exclude some dir or files from minify.
+Wildcard patterns for exclude some dir or files from minify.
+
+排除目录或文件列表，可使用通配符。
 
 ### toplevels
 
