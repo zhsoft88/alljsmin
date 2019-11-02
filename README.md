@@ -64,13 +64,24 @@ Search @all.js tag, merge contained files to all.js.
 For example, in tag file main.html:
 
 ```
+......
 <!-- @all.js -->
 <script src="js/a.js"></script>
 <script src="js/b.js"></script>
 <!-- @all.js -->
+......
+```
+
+Will translate to:
+
+```
+......
+<script src="js/all.js"></script>
+......
 ```
 
 These will merge “js/a.js”, “js/b.js” to “js/all.js” and minify it.
+
 
 Another example, in tag file background.js:
 
@@ -84,6 +95,20 @@ Another example, in tag file background.js:
 ......
       'js/content_script.js',
       /* @all.js */
+    ]
+    for (const file of all_js) {
+      chrome.tabs.executeScript(sender.tab.id,
+          {allFrames: true, frameId: sender.frameId, file});
+......
+```
+
+Will translate to:
+
+```
+......
+  } else if (request.cmd === 'inject-detail') {
+    const all_js = [
+      'js/all.js',
     ]
     for (const file of all_js) {
       chrome.tabs.executeScript(sender.tab.id,
