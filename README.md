@@ -24,15 +24,18 @@ $ [sudo] npm install -g alljsmin
 
 ```
 Usage:
-  alljsmin [OPTIONS] input_dir [output_dir]
+  alljsmin [OPTIONS] [input_dir [output_dir]]
 
 Options:
   -h, --help: Help
   -v, --version : Version
 
 Arguments:
-input_dir : input directory
+input_dir : input dir
 output_dir: optional, default: ${input_dir}.min
+
+Note:
+  If no input_dir specified and exists src dir, use it as input_dir.
 ```
 
 ## Configuration: alljsmin.json

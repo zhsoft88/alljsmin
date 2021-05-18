@@ -1,6 +1,6 @@
 {
   "name": "alljsmin",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Minify all js files and merge specified js files to all.js",
   "bin": {
     "alljsmin": "./bin/alljsmin"
