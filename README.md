@@ -47,6 +47,7 @@ Sample contents:
 ```
 {
   "tag_file": "js/background.js",
+  "is_debug_file": "js/log.js",
   "remove_files": [
     "jsconfig.json"
   ],
@@ -122,6 +123,11 @@ Will translate to:
 These will merge “js/bytesrep.js”, “js/string_path.js”, ..., "js/content_script.js"
 to “js/all.js” and minify it.
 
+### is_debug_file
+
+Replace 'const is_debug = true' with 'const is_debug = false'
+
+release模式下设置is_debug为false,以禁用某些功能
 
 ### remove_files
 
