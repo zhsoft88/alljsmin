@@ -4,7 +4,7 @@ alljsmin does:
 
 1. Minify all js files in specified input dir to output dir
 2. Merge some js files to all.js (identified by @all.js in tag file)
-3. Tweak 'const is_debug = true' to 'const is_debug = false' for release
+3. Tweak 'const is_debug = true' to 'const is_debug = false' for release (for is_debug_file)
 
 alljsmin是一款小工具，方便release js相关的项目。
 
