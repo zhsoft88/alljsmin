@@ -29,6 +29,7 @@ Usage:
 Options:
   -h, --help: Help
   -v, --version : Version
+  -n : Disable auto convert CRLF to LF in js file. (Default: enabled)
 
 Arguments:
 input_dir : input dir
@@ -46,7 +47,7 @@ Sample contents:
 
 ```
 {
-  "tag_file": "js/background.js",
+  "tag_file": "js/background.js", or ["js/bg1.js", "js/bg2.js", ...]
   "is_debug_file": "js/log.js",
   "remove_files": [
     "jsconfig.json"
